@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gerar Login</title>
+</head>
+<body>
+<h2>Gerar Login (válido por 24h)</h2>
+
+<button onclick="gerarLogin()">Gerar Login</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarLogin() {
+  let usuario = "USER_" + Math.floor(Math.random()*10000);
+  let senha = "PASS_" + Math.floor(Math.random()*10000);
+  let tempo = Date.now() + (24 * 60 * 60 * 1000);
+
+  document.getElementById("resultado").innerHTML =
+  "Usuário: " + usuario + "<br>Senha: " + senha + "<br>Válido por 24h";
+
+  alert("Depois vamos conectar isso ao login.json do GitHub!");
+}
+</script>
+
+</body>
+</html>
