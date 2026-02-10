@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Gerar Login</title>
+<meta charset="UTF-8">
+<title>Gerador de Login</title>
+<style>
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #111827;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.login-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #020617;
+    border-radius: 5px;
+}
+</style>
 </head>
 <body>
-<h2>Gerar Login (válido por 24h)</h2>
 
-<button onclick="gerarLogin()">Gerar Login</button>
+<div class="container">
+    <h2>Gerar Login (24 horas)</h2>
+    <p>Clique no botão para receber seu acesso temporário.</p>
 
-<p id="resultado"></p>
+    <button onclick="gerarLogin()">Gerar Login</button>
+
+    <div class="login-box" id="resultado"></div>
+</div>
 
 <script>
 function gerarLogin() {
@@ -17,9 +63,9 @@ function gerarLogin() {
   let tempo = Date.now() + (24 * 60 * 60 * 1000);
 
   document.getElementById("resultado").innerHTML =
-  "Usuário: " + usuario + "<br>Senha: " + senha + "<br>Válido por 24h";
-
-  alert("Depois vamos conectar isso ao login.json do GitHub!");
+  "<b>Usuário:</b> " + usuario + "<br>" +
+  "<b>Senha:</b> " + senha + "<br>" +
+  "<small>Válido por 24 horas</small>";
 }
 </script>
 
